@@ -53,6 +53,8 @@ namespace CSharpCore.Topics
             Console.WriteLine($"Final number: {finalNumber}");
         }
 
+        // var is the keyword for declaring variables with automatic type inference..
+        // Includes examples with List, Dictionary, and Array.
         public static void VarExample()
         {
             var numbers = new List<int> { 1, 2, 3, 4 };
@@ -79,13 +81,16 @@ namespace CSharpCore.Topics
         public static void DynamicExample()
         {
             dynamic something = 123;
-            Console.WriteLine(something);
+            Console.WriteLine($"{something} (Type: {something.GetType()})");
+
             something = 123.4;
-            Console.WriteLine(something);
+            Console.WriteLine($"{something} (Type: {something.GetType()})");
+
             something = "C Sharp";
-            Console.WriteLine(something);
+            Console.WriteLine($"{something} (Type: {something.GetType()})");
+
             something = true;
-            Console.WriteLine(something);
+            Console.WriteLine($"{something} (Type: {something.GetType()})");
         }
 
         public static void CharExample()
@@ -100,11 +105,36 @@ namespace CSharpCore.Topics
         public static void StringExample()
         {
             Console.WriteLine("\n/* String Example */");
+
             string message = "Hello C#";
-            Console.WriteLine(message);
+            Console.WriteLine("Original message: " + message);
+
+            // Length of the string
             Console.WriteLine("Length of message: " + message.Length);
+
+            // String concatenation
             Console.WriteLine("Concatenation: " + message + " World!");
+
+            // Accessing the first character of the string
             Console.WriteLine("First character: " + message[0]);
+
+            // Convert the string to uppercase
+            Console.WriteLine("ToUpper: " + message.ToUpper());
+
+            // Check if the string contains "C#"
+            Console.WriteLine("Contains 'C#'? " + message.Contains("C#"));
+
+            // Replace "C#" with "CSharp"
+            Console.WriteLine("Replace: " + message.Replace("C#", "CSharp"));
+
+            // Get substring starting from index 6
+            Console.WriteLine("Substring from index 6: " + message.Substring(6));
+
+            // Check for empty and null strings
+            string empty = "";
+            string nullString = null;
+            Console.WriteLine("IsNullOrEmpty(empty): " + string.IsNullOrEmpty(empty));
+            Console.WriteLine("IsNullOrEmpty(nullString): " + string.IsNullOrEmpty(nullString));
         }
 
         public static void DecimalExample()
@@ -124,4 +154,4 @@ namespace CSharpCore.Topics
             // PI = 3.14; // This would cause a compile-time error
         }
     }
-} 
+}
